@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pantallas/pages/login_page.dart';
 
+
 class InicioPage extends StatefulWidget {
-  const InicioPage({super.key});
+  const InicioPage({Key? key});
 
   @override
   State<InicioPage> createState() => _InicioPageState();
@@ -20,9 +21,9 @@ class _InicioPageState extends State<InicioPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
-                  'assets/images/cel.png',
-                  width: 200,
-                  height: 200,
+                  'assets/images/iphone.png',
+                  width: MediaQuery.of(context).size.width * 0.4,
+                  height: MediaQuery.of(context).size.width * 0.4,
                 ),
                 const SizedBox(height: 20),
                 const Contenido(),
@@ -36,7 +37,7 @@ class _InicioPageState extends State<InicioPage> {
 }
 
 class Contenido extends StatefulWidget {
-  const Contenido({super.key});
+  const Contenido({Key? key});
 
   @override
   State<Contenido> createState() => _ContenidoState();
@@ -50,7 +51,7 @@ class _ContenidoState extends State<Contenido> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         const Text(
-          'Bienvenido a CRG',
+          'Bienvenido a TGD!',
           textAlign: TextAlign.end,
           style: TextStyle(
             fontWeight: FontWeight.bold,
@@ -59,7 +60,7 @@ class _ContenidoState extends State<Contenido> {
         ),
         const SizedBox(height: 20),
         const Text(
-          'Celulares de Alta Gama',
+          'Aplicación en Desarrollo',
           textAlign: TextAlign.justify,
           style: TextStyle(
             fontWeight: FontWeight.normal,
@@ -70,7 +71,7 @@ class _ContenidoState extends State<Contenido> {
           height: 25,
         ),
         Container(
-          padding: const EdgeInsets.symmetric(horizontal: 30),
+          padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.1),
           child: ElevatedButton(
             onPressed: () {
               Navigator.push(
@@ -79,12 +80,10 @@ class _ContenidoState extends State<Contenido> {
               );
             },
             style: ElevatedButton.styleFrom(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 100, vertical: 20),
-              // Ajusta los valores de padding 
+              padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.25, vertical: 20),
             ),
             child: const Text(
-              'Iniciemos>',
+              'Iniciar',
               style: TextStyle(fontSize: 19),
             ),
           ),
@@ -93,6 +92,8 @@ class _ContenidoState extends State<Contenido> {
     );
   }
 }
+
+
 
 class Fondo extends StatefulWidget {
   const Fondo({super.key});
@@ -105,11 +106,16 @@ class _FondoState extends State<Fondo> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-          gradient: LinearGradient(
-              colors: [Color.fromARGB(255, 63, 74, 228), Color.fromARGB(255, 5, 6, 72)],
-              begin: Alignment.centerRight,
-              end: Alignment.bottomLeft)),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            Colors.blue.shade700,
+            const Color.fromARGB(255, 4, 27, 61)
+          ],
+          begin: Alignment.centerRight,
+          end: Alignment.bottomLeft
+        )
+      ),
     );
   }
 }

@@ -48,6 +48,8 @@ class _LoginPageState extends State<LoginPage> {
   }
 }
 
+
+
 class Contenido extends StatefulWidget {
   const Contenido({super.key});
 
@@ -55,52 +57,92 @@ class Contenido extends StatefulWidget {
   State<Contenido> createState() => _ContenidoState();
 }
 
+// class _ContenidoState extends State<Contenido> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Padding(
+//       padding: const EdgeInsets.symmetric(horizontal: 20),
+//       child: Column(
+//         mainAxisAlignment: MainAxisAlignment.center,
+//         crossAxisAlignment: CrossAxisAlignment.start,
+//         children: const [
+//           Text(
+//             'Inicia sesión en TGD y da continuar',
+//             textAlign: TextAlign.center,
+//             style: TextStyle(
+//                 color: Colors.white, fontSize: 30, fontWeight: FontWeight.w500),
+//           ),
+//           SizedBox(
+//             height: 15,
+//           ),
+//           Text(
+//             'Introduce tu correo electrónico y contraseña para continuar en CRG',
+//             textAlign: TextAlign.center,
+//             style: TextStyle(
+//               color: Colors.white,
+//               fontSize: 15,
+//               letterSpacing: 0.7,
+//             ),
+//           ),
+//           SizedBox(
+//             height: 5,
+//           ),
+//           Datos(),
+//           SizedBox(
+//             height: 50,
+//           ),
+//           Center(
+//             child: Text(
+//               'ERRH',
+//               textAlign: TextAlign.center,
+//               style: TextStyle(
+//                 color: Color.fromARGB(255, 255, 255, 255),
+//                 fontSize: 18,
+//                 fontWeight: FontWeight.w500,
+//               ),
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
+
 class _ContenidoState extends State<Contenido> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
-          Text(
-            'Inicia sesión en TGD y da continuar',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-                color: Colors.white, fontSize: 30, fontWeight: FontWeight.w500),
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          Text(
-            'Introduce tu correo electrónico y contraseña para continuar en CRG',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 15,
-              letterSpacing: 0.7,
-            ),
-          ),
-          SizedBox(
-            height: 5,
-          ),
-          Datos(),
-          SizedBox(
-            height: 50,
-          ),
-          Center(
-            child: Text(
-              'ERRH',
-              textAlign: TextAlign.center,
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const [
+            Text(
+              'Inicia sesión en TGD',
               style: TextStyle(
-                color: Color.fromARGB(255, 255, 255, 255),
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
+                color: Colors.white,
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
               ),
             ),
-          ),
-        ],
+            SizedBox(
+              height: 5,
+            ),
+            Text(
+              'Introduce tu correo electrónico y contraseña para continuar en TGD',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 10,
+                letterSpacing: 1.5,
+              ),
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            Datos(),
+          ],
+        ),
       ),
     );
   }
@@ -133,10 +175,10 @@ class _DatosState extends State<Datos> {
                 prefixIcon: Icon(
                   Icons.person_4_sharp,
                 )),
-                style: const TextStyle(color: Color.fromARGB(255, 30, 3, 3), fontSize: 18),
+                style: const TextStyle(color: Color.fromARGB(255, 255, 255, 255), fontSize: 17),
           ),
           const SizedBox(
-            height: 8,
+            height: 5,
           ),
           const SizedBox(
             height: 15,
@@ -157,9 +199,7 @@ class _DatosState extends State<Datos> {
                   },
                 )),
           ),
-          const SizedBox(
-            height: 15,
-          ),
+          const SizedBox(height: 15,),
           const Botones(),
         ],
       ),
@@ -186,10 +226,10 @@ class _BotonesState extends State<Botones> {
               onPressed: () {},
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all<Color>(
-                      const Color.fromARGB(255, 16, 161, 142))),
+                      const Color.fromARGB(255, 28, 209, 185))),
               child: const Text(
                 'Login',
-                style: TextStyle(color: Colors.white, fontSize: 18),
+                style: TextStyle(color: Colors.white, fontSize: 20),
               )),
         ),
         const SizedBox(
@@ -236,11 +276,16 @@ class _FondoState extends State<Fondo> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-          gradient: LinearGradient(
-              colors: [Color.fromARGB(255, 63, 74, 228), Color.fromARGB(255, 5, 6, 72)],
-              begin: Alignment.centerRight,
-              end: Alignment.bottomLeft)),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            Colors.blue.shade700,
+            const Color.fromARGB(255, 4, 27, 61)
+          ],
+          begin: Alignment.centerRight,
+          end: Alignment.bottomLeft
+        )
+      ),
     );
   }
 }
